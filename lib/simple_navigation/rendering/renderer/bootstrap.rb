@@ -55,7 +55,6 @@ module SimpleNavigation
           unless split
             item_options[:link][:class] << 'dropdown-toggle'
             item_options[:link][:'data-toggle'] = 'dropdown'
-            item_options[:link][:'data-target'] = '#'
             link << content_tag(:b, '', :class => 'caret')
           end
           item.html_options = item_options
