@@ -5,9 +5,9 @@ require "simple-navigation-bootstrap/version"
 Gem::Specification.new do |s|
   s.name        = "simple-navigation-bootstrap"
   s.version     = SimpleNavigationBootstrap::VERSION
-  s.authors     = ["Peter Fern"]
-  s.email       = ["github@obfusc8.org"]
-  s.homepage    = "https://github.com/pdf/simple-navigation-bootstrap"
+  s.authors     = ["Camden Narzt"]
+  s.email       = ["camden.narzt@hotmail.com"]
+  s.homepage    = "https://github.com/CamJN/simple-navigation-bootstrap"
   s.summary     = %q{simple-navigation-bootstrap is a simple-navigation renderer for twitter-bootstrap navigation and dropdowns.}
   s.description = %q{simple-navigation-bootstrap is a simple-navigation renderer for twitter-bootstrap navigation and dropdowns.}
 
