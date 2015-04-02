@@ -27,14 +27,14 @@ module SimpleNavigation
         SimpleNavigation.config.selected_class = config_selected_class
         if skip_if_empty? && item_container.empty?
           ''
-        else  
+        else
           if item_container.respond_to?(:dom_attributes)
             dom_attributes = item_container.dom_attributes
           else
             # supports simple-navigation before the ItemContainer#dom_attributes
             dom_attributes = {:id => item_container.dom_id, :class => item_container.dom_class}
           end
-          content_tag(:ul, list_content, dom_attributes) 
+          content_tag(:ul, list_content, dom_attributes)
         end
       end
 
@@ -50,16 +50,15 @@ module SimpleNavigation
         link << name
         if include_sub_navigation?(item)
           item_options = item.html_options
-          item_options[:link] = Hash.new if item_options[:link].nil?
-          item_options[:link][:class] = Array.new if item_options[:link][:class].nil?
+          item_options[:class] = Array.new if item_options[:class].nil?
           unless split
-            item_options[:link][:class] << 'dropdown-toggle'
-            item_options[:link][:'data-toggle'] = 'dropdown'
+            item_options[:class] << 'dropdown-toggle'
+            item_options[:data] = Hash.new if item_options[:data].nil?
+            item_options[:data][:toggle] = 'dropdown'
             link << content_tag(:b, '', :class => 'caret')
           end
-          item.html_options = item_options
         end
-        link_to(link.join(" ").html_safe, url, options_for(item))
+        link_to(link.join(" ").html_safe, url, item_options)
       end
 
     end
