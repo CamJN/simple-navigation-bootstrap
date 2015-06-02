@@ -53,9 +53,10 @@ module SimpleNavigation
           item_options[:class] = Array.new if item_options[:class].nil?
           unless split
             if dropdown
-              item_options[:link][:class] << 'dropdown-toggle'
-              item_options[:link][:'data-toggle'] = 'dropdown'
-              item_options[:link][:'data-target'] = '#'
+              item_options[:class] << 'dropdown-toggle'
+              item_options[:data] = Hash.new if item_options[:data].nil?
+              item_options[:data][:toggle] = 'dropdown'
+              item_options[:data][:target] = '#'
             end
             link << content_tag(:b, '', :class => 'caret')
           end
