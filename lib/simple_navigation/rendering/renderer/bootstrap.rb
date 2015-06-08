@@ -61,7 +61,7 @@ module SimpleNavigation
             link << content_tag(:b, '', :class => 'caret')
           end
         end
-        link_to(link.join(" ").html_safe, url, item_options)
+        link_to(link.join(" ").html_safe, url, {method: item.method}.merge(item_options || {}))
       end
 
     end
