@@ -56,7 +56,7 @@ module SimpleNavigation
               item_options[:class] << 'dropdown-toggle'
               item_options[:data] ||= Hash.new
               item_options[:data][:toggle] = 'dropdown'
-              item_options[:data][:target] = '#'
+              item_options[:data][:target] = '#' # this might be bad, see comment on 1c7045d3
             end
             link << content_tag(:b, '', :class => 'caret')
           end
