@@ -54,7 +54,7 @@ module SimpleNavigation
           unless split
             if dropdown
               item_options[:class] << 'dropdown-toggle'
-              item_options[:data] = Hash.new if item_options[:data].nil?
+              item_options[:data] ||= Hash.new
               item_options[:data][:toggle] = 'dropdown'
               item_options[:data][:target] = '#'
             end
